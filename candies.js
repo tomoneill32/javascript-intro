@@ -19,6 +19,8 @@ const candies = [
 const searchCandies = (firstletters, maxprice) => {
   return candies.filter((candy) => {
     return candy.name.substring(0, firstletters.length) === firstletters;
+    }).filter((candy) => {
+      return candy.price <= maxprice;
     }).map(candy => candy.name);
 };
 

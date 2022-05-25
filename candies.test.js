@@ -11,4 +11,13 @@ describe('searchCandies', () => {
   it('returns mars and malteasers for "Ma"', () => {
     expect(searchCandies('Ma', 10)).toEqual(['Mars', 'Maltesers' ]);
   })
+  it('filters the array of candies that are lower than the given max price', () => {
+    expect(searchCandies('Ma', 2)).toEqual(['Mars']);
+  })
+  it ('filters by first letters and price', () => {
+    expect(searchCandies('S', 10)).toEqual(['Skitties', 'Skittles', 'Starburst']);
+  })
+  it ('filters by first letters and price', () => {
+    expect(searchCandies('S', 4)).toEqual(['Skitties', 'Skittles']);
+  })
 });
